@@ -1,0 +1,102 @@
+body{
+    /* width: 90%;
+    margin: auto; */
+    background-color: rgb(212, 207, 207);
+
+}
+nav{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(177, 214, 238);
+    box-shadow: 4px 4px 40px gray;
+}
+.menu{
+    font-size: 20px;
+}
+.menu:hover{
+    color: white;
+    cursor: pointer;
+}
+.menu a:hover{
+    color: white;
+    cursor: pointer;
+
+}
+.menu a{
+text-decoration: none;
+color: black;
+}
+li{
+    list-style: none;
+}
+.navLink li{
+    margin-right: 25px;
+}
+.banner_container{
+    width: 90%;
+    padding: 20px;
+    margin: auto;
+}
+.banner{
+    height: 450px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    align-items: center;
+    background: linear-gradient(cyan,rgb(134, 125, 125));
+    box-shadow: 30px 5px 20px gray;
+    border-radius: 10px;
+    padding: 70px;
+}
+.bn-img{
+    width: 350px;
+    margin-top: -100px;
+}
+.font{
+font-size: 16px;
+}
+.name{
+    color: rgb(166, 52, 182)
+}
+.primary{
+    color: rgb(7, 9, 83);
+}
+
+.card-container{
+    width: 400px;
+}
+@media only screen and (max-width: 600px) {
+    /* Styles for small devices go here */
+    body {
+      background-color: lightblue;
+    }
+    .name{
+        color: rgb(166, 52, 182);
+        text-align: start;
+        
+    }
+    .card-container{
+        width: 100%;
+    }
+    .bn-img{
+        width: 150px;
+        margin-top: -100px;
+        position: absolute;
+        top: 96%; /* Adjust the positioning based on your needs */
+        left: 80%; /* Adjust the positioning based on your needs */
+        transform: translate(-45%, -50%);
+    }
+    .banner{
+        height: 450px;
+        display: block;
+        position: relative;
+        justify-content: space-around;
+        margin: auto;
+        align-items: center;
+        background: linear-gradient(cyan,rgb(134, 125, 125));
+        box-shadow: 10px 10px 0px gray;
+        border-radius: 10px;
+        padding: 20px;
+    }
+    /* Additional styles for small devices can be added as needed */
+  }
