@@ -6,7 +6,7 @@ const loadDetails = () => {
         .catch(err => console.log(err))
 }
 const DisplayDetails=data=>{
-console.log(data);
+    console.log(data);
 data.forEach(item => {
     const parent = document.getElementById('slider-container')
     const LI = document.createElement('li')
@@ -28,7 +28,38 @@ data.forEach(item => {
     
 });
 }
+
+const loadDesignation = () => {
+    fetch("https://testing-8az5.onrender.com/doctor/designation/")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        data.forEach((item) => {
+          const parent = document.getElementById("drop-deg");
+          const li = document.createElement("li");
+          li.classList.add("dropdown-item");
+          li.innerText = item?.name;
+          parent.appendChild(li);
+        });
+      });
+  };
+  const loadSpecialization = () => {
+    fetch("http://testing-8az5.onrender.com/doctor/specialization/")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        data.forEach((item) => {
+          const parent = document.getElementById("drop-spe");
+          const li = document.createElement("li");
+          li.classList.add("dropdown-item");
+          li.innerText = item?.name;
+          parent.appendChild(li);
+        });
+      });
+  };
 loadDetails();
+loadDesignation();
+loadSpecialization();
 
 
 

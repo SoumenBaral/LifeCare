@@ -65,6 +65,32 @@ font-size: 16px;
 .card-container{
     width: 400px;
 }
+#search{
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px 0px;
+}
+#search-btn{
+    padding: 10px;
+    background-color: rgb(115, 219, 109);
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 20px 0px;
+}
+#search-btn:hover{
+    padding: 10px;
+    background-color: rgb(50, 133, 46);
+    color: white;
+    font-weight: 900;
+    border: none;
+    border-radius: 20px 0px;
+}
+.doctors-container{
+    width: 80%;
+    margin: auto
+}
 @media only screen and (max-width: 600px) {
     /* Styles for small devices go here */
     body {

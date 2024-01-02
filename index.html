@@ -94,7 +94,7 @@
                 class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein">
                 <ul id="slider-container" class="slider-container py-4">
 
-                 
+
 
 
                 </ul>
@@ -115,6 +115,45 @@
     </Section>
 
 
+    <!-- all Doctor Section  -->
+
+    <Section>
+        <div class="doctors-container row d-flex justify-content-center">
+            <div class="col-md-4 text-center d-flex gap-3 justify-content-center">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        designation
+                    </button>
+                    <ul id="drop-deg" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li class="dropdown-item">ok</li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton2"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        specialization
+                    </button>
+                    <ul id="drop-spe" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8 mt-5 mt-md-0">
+                <input id="search" type="text" placeholder="search..." />
+                <button id="search-btn" onclick="handleSearch()">Search</button>
+                <div id="doctors" class="doctors mt-5"></div>
+                <div id="nodata" class="nodata">
+                    <img class="w-90" src="./Images/nodata.png" alt="" />
+                </div>
+                <div id="spinner" class="loading text-center">
+                    <h4>loading....</h4>
+                </div>
+            </div>
+        </div>
+
+    </Section>
+
+
 
     <script src="js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
@@ -122,9 +161,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    
-   
-    
+
+
+
 </body>
 
 </html>
