@@ -11,7 +11,7 @@ data.forEach(item => {
     const LI = document.createElement('li')
     LI.classList.add('card-container') 
     LI.innerHTML=`
-            <div class="card shadow h-100">
+            <div class="">
             <div class="ratio ratio-16x9">
                 <img src=${item.image} class="card-img-top" loading="lazy" alt="...">
             </div>
@@ -54,7 +54,6 @@ const loadDoctors =(search)=>{
 const displayDoctors=(results)=>{
     console.log(results);
     results?.forEach(item => {
-        console.log(item);
             const parent = document.getElementById("doctors");
             const Div = document.createElement('div');
 
@@ -114,6 +113,42 @@ const SearchByValue=()=>{
     loadDoctors(search.value)
     
 }
+const loadReviews=()=>{
+  fetch('https://testing-8az5.onrender.com/doctor/review/')
+    .then(res=>res.json())
+    .then(data=>DisplayReview(data))
+}
+const DisplayReview = data =>{
+  data.forEach(item => {
+    console.log(item);
+    const parent = document.getElementById('Review-container')
+    const LI = document.createElement('li')
+    LI.classList.add('card-container') 
+    LI.innerHTML=`
+    <div class="">
+    <div  class="d-flex align-items-center justify-content-center my-5 gap-3">
+        <img src='/Images/girl.png' class="ReviewImg" loading="lazy" alt="...">
+        <div>
+            <h4>${item.reviewer}</h4>
+            <h6>${item.rating}</h6>
+        </div>
+    </div>
+    <div class="card-body ">
+        <h2>An amazing service</h2>
+        
+        <p class="card-text">${item.body.slice(0,210)}</p>
+        
+    </div>
+</div>
+    `
+    parent.appendChild(LI)
+    
+});
+}
+
+
+loadReviews();
+
 loadDoctors('Dermatologist')
 loadSpecialization();
 loadDetails();
