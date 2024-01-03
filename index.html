@@ -117,7 +117,7 @@
 
     <!-- all Doctor Section  -->
 
-    <Section>
+    <Section class="mb-5">
         <div class="doctors-container row d-flex justify-content-center">
             <div class="col-md-4 text-center d-flex gap-3 justify-content-center">
                 <div class="dropdown">
@@ -126,7 +126,7 @@
                         designation
                     </button>
                     <ul id="drop-deg" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                    <li class="dropdown-item">ok</li>
+                
                     </ul>
                 </div>
                 <div class="dropdown">
@@ -135,18 +135,25 @@
                         specialization
                     </button>
                     <ul id="drop-spe" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                
                     </ul>
                 </div>
             </div>
-            <div class="col-md-8 mt-5 mt-md-0">
+            <div class="col-md-8 mt-5 mt-md-0 ">
                 <input id="search" type="text" placeholder="search..." />
-                <button id="search-btn" onclick="handleSearch()">Search</button>
-                <div id="doctors" class="doctors mt-5"></div>
-                <div id="nodata" class="nodata">
-                    <img class="w-90" src="./Images/nodata.png" alt="" />
-                </div>
-                <div id="spinner" class="loading text-center">
-                    <h4>loading....</h4>
+                <button id="search-btn" class="search-btn" onclick="SearchByValue()">Search</button>
+                <div id="doctors" class="doctors text-center mt-5"></div>
+                    <div id="nodata" class="nodata">
+                        <img class="w-90" src="./Images/nodata.png" alt="" />
+                        
+                    </div>
+                    <div id="spinner" class="loading text-center">
+                        <h4>loading....</h4>
+                    </div>
+
+                    <div id="doctors" class="text-center d-md-flex flex-wrap">
+                        
+                    </div>
                 </div>
             </div>
         </div>
