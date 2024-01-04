@@ -5,6 +5,7 @@ const loadDetails = () => {
         .then(data =>DisplayDetails(data))
         .catch(err => console.log(err))
 }
+
 const DisplayDetails=data=>{
 data.forEach(item => {
     const parent = document.getElementById('slider-container')
@@ -70,7 +71,7 @@ const displayDoctors=(results)=>{
                               })}
                             </div>
                             <br>
-                            <button class="search-btn mt-2"> <a class='text-decoration-none text-white' target="_blank" href="docDetails.html?doctorId=${item.id}">Details</a></button>
+                            <button class="search-btn mt-2"> <a class='text-decoration-none text-white' href="pages/docDetail.html?doctorId=${item.id}">Details</a></button>
 
             `
             parent.appendChild(Div);
