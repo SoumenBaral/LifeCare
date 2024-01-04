@@ -1,4 +1,4 @@
-console.log('I am here to entertain You');
+
 const GetPrams =()=>{
     const params = new URLSearchParams(document.location.search).get('doctorId')
     const Loader = document.getElementById('Loader')
@@ -8,6 +8,16 @@ const GetPrams =()=>{
     fetch(url)
         .then(res=> res.json())
         .then(data => DisplayDoctorDetails(data))
+
+    
+  fetch(`https://testing-8az5.onrender.com/doctor/review/?doctor_id=${params}`)
+    .then((res) => res.json())
+    .then((data) => doctorReview(data));
+}
+const doctorReview = data =>{
+    console.log(data);
+    console.log('what happened baby ');
+
 }
 const DisplayDoctorDetails=(doctor)=>{
 console.log(doctor);
