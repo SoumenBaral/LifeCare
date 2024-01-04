@@ -149,7 +149,7 @@ const DisplayReview = data =>{
 
 loadReviews();
 
-loadDoctors('Dermatologist')
+loadDoctors('Steven')
 loadSpecialization();
 loadDetails();
 loadDesignation();
