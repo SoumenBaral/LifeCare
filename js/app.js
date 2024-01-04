@@ -121,7 +121,6 @@ const loadReviews=()=>{
 }
 const DisplayReview = data =>{
   data.forEach(item => {
-    console.log(item);
     const parent = document.getElementById('Review-container')
     const LI = document.createElement('li')
     LI.classList.add('card-container') 

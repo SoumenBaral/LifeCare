@@ -135,6 +135,36 @@ footer{
     background: linear-gradient(rgb(134, 125, 125),rgb(7, 246, 246));
     
 }
+.doctorImg img{
+    height: 250px;
+    width: 250px;
+    border-radius: 150px;
+    border: 8px solid white;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 20px gray;
+}
+.AppointmentBtn{
+    padding: 5px 20px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 20px;
+    background-color: rgb(44, 144, 144);
+}
+#DocName{
+    color: rgb(7, 130, 130);
+}
+.doctor-details-container{
+    width: 75%;
+    margin: auto;
+    padding: 20px;
+    
+}
+#Loader{
+    height: 300px;
+    display: none;
+}
 @media only screen and (max-width: 600px) {
     /* Styles for small devices go here */
     body {
@@ -167,6 +197,12 @@ footer{
         box-shadow: 10px 10px 0px gray;
         border-radius: 10px;
         padding: 20px;
+    }
+    .doctor-details-container{
+        width: 90%;
+        margin: auto;
+        padding: 20px;
+        
     }
     /* Additional styles for small devices can be added as needed */
   }
