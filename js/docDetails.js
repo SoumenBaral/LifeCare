@@ -3,7 +3,7 @@ const GetPrams =()=>{
     const params = new URLSearchParams(document.location.search).get('doctorId')
     const Loader = document.getElementById('Loader')
     Loader.style.display='block'
-    console.log(params);
+    LoadTime(params)
     const url = `https://testing-8az5.onrender.com/doctor/list/${params}`
     fetch(url)
         .then(res=> res.json())
@@ -55,11 +55,59 @@ Div.innerHTML = ` <div class=" d-md-flex justify-content-between align-items-cen
   <h5>${doctor.designation[0]}</h5>
   <p class="w-100">Lorem ipsum dolor sit amet consecte adipiscing elit amet hendrerit pretium nulla sed enim iaculis mi.</p>
   <h4>Fees: ${doctor.fee} BDT</h4>
-  <button class="AppointmentBtn">Take Appointment</button>
+  <button class="AppointmentBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Take Appointment</button>
 
 
 </div>`
 parent.appendChild(Div)
 
+}
+
+const LoadTime =(id)=>{
+    fetch(`https://testing-8az5.onrender.com/doctor/availabletime/?doctor_id=${id}`)
+        .then(res=>res.json())
+        .then(data=>{
+            data.forEach(item => {
+                console.log(item);
+                const parent = document.getElementById('time-container')
+                const option = document.createElement('option')
+                option.value = item.id
+                option.innerText = item.name;
+                parent.appendChild(option);
+             
+            });
+        })
+}
+
+const HandleAppointment = ()=>{
+
+    const param = new URLSearchParams(window.location.search).get("doctorId");
+    const status = document.getElementsByName('status')
+    const Selected = Array.from(status).find(btn=>btn.checked)
+    const symptom = document.getElementById("symptom").value
+
+    const time = document.getElementById('time-container')
+    const SelectedTime = time.options[time.selectedIndex]
+    console.log(Selected.value,symptom,SelectedTime.value);
+
+    const info = {
+
+    "appointment_type":Selected.value,
+    "appointment_status":"Pending",
+    "time": SelectedTime.value,
+    "symptom": symptom,
+    "cancel": false,
+    "patient": 1,
+    "doctor": param
+
+    }
+console.log(info);
+fetch('https://testing-8az5.onrender.com/appointment/',{
+    method:"POST",
+    headers : {"content-type":"application/json"},
+    body: JSON.stringify(info)
+})
+.then(res=>res.json())
+.then(data=>console.log(data))
 }
 GetPrams()

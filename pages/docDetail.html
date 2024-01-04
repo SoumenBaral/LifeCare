@@ -87,7 +87,34 @@
    </section>
 
 
+<!-- Modal Aria  -->
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop"  data-bs-keyboard="false" tabindex="-1"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-center">
+      <div class="modal-header bg-modal">
+        <h5 class="modal-title text-center" id="staticBackdropLabel">Take Appointment</h5>
+        <button type="button" class="btn-close text-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body modal-body-bg">
+        <div class="modal-body">
+          <input type="radio" name="status" value="Offline" /> Offline
+          <input type="radio" name="status" value="Online" /> Online<br />
 
+          <input id="symptom" type="text" placeholder="Type Your symptom" />
+          <br />
+
+          <select id="time-container" class="p-2 mt-2" id="time" name="time">
+            
+          </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="CloseBtn" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button" onclick="HandleAppointment()" id="SubmitBtn" class="btn btn-primary">Take Appointment</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <footer class="p-5 ">
         <div class="container w-75 m-auto row p-2">
