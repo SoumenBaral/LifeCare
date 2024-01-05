@@ -32,7 +32,7 @@ data.forEach(item => {
 const loadDoctors =(search)=>{
     document.getElementById("doctors").innerHTML = "";
     document.getElementById("spinner").style.display = "block";
-    console.log(search);
+
     fetch(
         `https://testing-8az5.onrender.com/doctor/list/?search=${
           search ? search : ""
@@ -40,7 +40,6 @@ const loadDoctors =(search)=>{
       )
         .then((res) => res.json())
         .then((data) =>{
-            console.log(data);
             if (data.results.length > 0) {
               document.getElementById("spinner").style.display = "none";
               document.getElementById("nodata").style.display = "none";
@@ -53,7 +52,7 @@ const loadDoctors =(search)=>{
           });
 }
 const displayDoctors=(results)=>{
-    console.log(results);
+  
     results?.forEach(item => {
             const parent = document.getElementById("doctors");
             const Div = document.createElement('div');
