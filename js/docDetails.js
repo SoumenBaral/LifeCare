@@ -111,7 +111,7 @@ fetch('https://testing-8az5.onrender.com/appointment/',{
 .then(res=>res.json())
 .then(data=>{
     console.log(data)
-    window.location.href ='../pages/allAppoinment.html'
+    window.location.href =`../pages/pdf.html?doctorId=${param}`
 
 })
 }
