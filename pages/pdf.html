@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <div class="pdf-container text-center">
+    <div id="pdf" class="pdf-container text-center">
       <h1 class="title text-center p-5 mt-5"><img src="../Images/stethoscope 1.png" alt=""><span class="text-primary">Life</span> <span class="text-warning">CARE</span></h1>
       <div  id="pdf-container">
        
@@ -28,14 +28,16 @@
          <h3 class="mt-5 text-danger">Symptoms</h3>
          <div class=" ">
             <div class="w-50 m-auto border border-secondary p-5 rounded-pill shadow ">
-                <p class="w-100">Rerum tempore eligendi iure maiores provident quae repellendus iusto doloribus aspernatur officiis reiciendis, quas vel architecto rem cumque amet eius porro distinctio?</p>
+                <p class="w-100">Rerum tempore eligendi iure iusto doloribus aspernatur officiis reiciendis, quas vel architecto rem cumque amet eius porro distinctio?</p>
              </div>
          </div>
          
-         <button class="AppointmentBtn my-5">Fees: 2000 Taka</button>
+         <button class="AppointmentBtn my-3">Fees: 2000 Taka</button>
     </div>
 
-    <button onclick="handleDownload()">Hello</button>
+    <div class="text-center">
+        <button class="special-btn my-5" onclick="handleDownload()">Download pdf</button>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
    <script src="../js/pdf.js"></script>

@@ -49,5 +49,22 @@ const handlePdf = ()=>{
         })})
 
 }
+const handleDownload = () => {
+    const element = document.getElementById("pdf");
+  
+    // Define the options for html2pdf
+    const options = {
+      margin: 5,
+      filename: "lifeCare.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+    };
+  
+    // Use html2pdf to generate and download the PDF
+      html2pdf(element, options);
+      
+  };
+
 
 handlePdf()
