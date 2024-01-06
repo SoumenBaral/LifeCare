@@ -202,7 +202,23 @@ footer{
     border-radius: 20px 5px;
 
 }
+.user-details{
+    width: 80%;
+    margin: auto;
+    padding: 40px;
+}
+.allAppointmentContainer {
+    width: 90%;
+    margin: auto;
+    padding: 30px;
+    min-height: 400px;
+    display: block;
+}
 
+.allAppointmentContainer .table {
+    width: 100%;
+   
+}
 @media only screen and (max-width: 600px) {
     /* Styles for small devices go here */
     body {

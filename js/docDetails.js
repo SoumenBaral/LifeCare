@@ -42,7 +42,7 @@ const doctorReview = ReviewerDetails =>{
 const DisplayDoctorDetails=(doctor)=>{
 console.log(doctor);
 const Loader = document.getElementById('Loader')
-    Loader.style.display='none'
+Loader.style.display='none'
 const parent = document.getElementById('details_Container')
 const Div = document.createElement('div')
 Div.innerHTML = ` <div class=" d-md-flex justify-content-between align-items-center gap-5">
@@ -80,6 +80,7 @@ const LoadTime =(id)=>{
 }
 
 const HandleAppointment = ()=>{
+    const patient_id = localStorage.getItem('patient_id');
 
     const param = new URLSearchParams(window.location.search).get("doctorId");
     const status = document.getElementsByName('status')
@@ -97,7 +98,7 @@ const HandleAppointment = ()=>{
     "time": SelectedTime.value,
     "symptom": symptom,
     "cancel": false,
-    "patient": 1,
+    "patient": patient_id,
     "doctor": param
 
     }
@@ -108,6 +109,20 @@ fetch('https://testing-8az5.onrender.com/appointment/',{
     body: JSON.stringify(info)
 })
 .then(res=>res.json())
-.then(data=>console.log(data))
+.then(data=>{
+    console.log(data)
+    window.location.href ='../pages/allAppoinment.html'
+
+})
 }
+
+const patientId = ()=>{
+    const UserId = localStorage.getItem('user_id');
+    fetch(`https://testing-8az5.onrender.com/appointment/?user_id=${UserId}`)
+        .then(res=>res.json())
+        .then(data=>{
+            localStorage.setItem("patient_id", data[0].id);
+        })
+}
+patientId()
 GetPrams()
