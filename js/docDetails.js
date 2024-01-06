@@ -48,7 +48,7 @@ const Div = document.createElement('div')
 Div.innerHTML = ` <div class=" d-md-flex justify-content-between align-items-center gap-5">
 
 <div class="doctorImg my-4 m-md-0 ">
-  <img src=${doctor.image} alt="" srcset="">
+  <img src=${doctor?.image} alt="" srcset="">
 </div>
 <div class="docInfo text-center">
   <h2 id="DocName">${doctor.full_name}</h2>
